@@ -74,9 +74,10 @@ class HomePage extends Component<{}, { selectedOrgan: Organ, selectedSet: number
         <div className="sets">
           <ul>
             {
-              [1,2,3,4,5,6,7,8].map(i => {
+              Array.from(Array(8).keys()).map(i => {
+                let index = i + 1;
                 return (
-                  <li key={i} onTouchStart={() => this.loadSet(i)} className={`${this.state.selectedSet == i ? 'selected': 'unselected'}`}>Set {i}</li> 
+                  <li key={index} onTouchStart={() => this.loadSet(index)} className={`${this.state.selectedSet === index ? 'selected': 'unselected'}`}>Set {index}</li> 
                 )
               })
             }

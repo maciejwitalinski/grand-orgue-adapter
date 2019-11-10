@@ -11,7 +11,6 @@ app.use(cors() );
 app.use(bodyParser.json());
 
 const easymidi = require('easymidi');
-const inputs = easymidi.getInputs();
 const outputs = easymidi.getOutputs();
 
 const GOoutputs = outputs.reduce((prev, str, i) => {
@@ -51,9 +50,8 @@ prompt.get(prompt_attributes, function (err, result) {
             output = GOoutputs[0];
         }
 
-        console.info('using', configName, output);
+        console.info('Using', `${configName} Sample set, MIDI: `, output);
         init(configName, output);
-        
     }
 });
 
@@ -63,7 +61,7 @@ const init = (config, output) => {
 
     app.patch('/api/reset', (req, res) => {
         return res.json({status: 'ok', data: grandOrgue.reset(req, res) });
-    })
+    });
     
     app.patch('/api/piston', (req, res) => {
         return res.json({

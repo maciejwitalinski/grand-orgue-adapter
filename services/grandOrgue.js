@@ -16,13 +16,6 @@ class GrandOrgue {
                 velocity: 0,
                 channel: this.channel
             });
-
-
-            // this.midi.send('noteon', {
-            //     note: this.config.start + piston,
-            //     velocity: 1,
-            //     channel: this.channel
-            // });
         }
     }
 
@@ -35,7 +28,6 @@ class GrandOrgue {
     }
 
     switchAll(req) {
-        console.log(req.body);
         for(let piston of req.body.pistons) {
             this.midi.send('noteon', {
                 note: piston.key,
