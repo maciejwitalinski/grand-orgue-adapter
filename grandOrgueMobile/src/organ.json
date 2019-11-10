@@ -1,0 +1,97 @@
+[{
+    "name": "Skrzatusz",
+    "start": 83,
+    "pistons": [{
+        "name": "Tremulant",
+        "key": 83
+    },
+    {
+        "name": "Redact",
+        "key": 84
+    },
+    {
+        "name": "Fluto dolce",
+        "key": 85
+    },
+    {
+        "name": "Praeftant",
+        "key": 86
+    },
+    {
+        "name": "Biola di Bamba",
+        "key": 87
+    },
+    {
+        "name": "Keigen-principal",
+        "key": 88
+    },
+    {
+        "name": "Principal",
+        "key": 89
+    },
+    {
+        "name": "Bourdon",
+        "key": 90
+    },
+    {
+        "name": "Flute harm.",
+        "key": 91
+    },
+    {
+        "name": "Fugara",
+        "key": 92
+    },
+    {
+        "name": "Octave 4'",
+        "key": 93
+    },
+    {
+        "name": "Quinte",
+        "key": 94
+    },
+    {
+        "name": "Octave 2'",
+        "key": 95
+    },
+    {
+        "name": "Mixtur",
+        "key": 96
+    },
+    {
+        "name": "Cornett",
+        "key": 97
+    },
+    {
+        "name": "Gubbaff",
+        "key": 98
+    },
+    {
+        "name": "Biolon",
+        "key": 99
+    },
+    {
+        "name": "Bassflote",
+        "key": 100
+    },
+    {
+        "name": "Octavbass",
+        "key": 101
+    },
+    {
+        "name": "Polofaune",
+        "key": 102
+    },
+    {
+        "name": "Switch",
+        "key": 103
+    },
+    {
+        "name": "Pedal 1",
+        "key": 104
+    },
+    {
+        "name": "Pedal 2",
+        "key": 105
+    }
+]
+}]
