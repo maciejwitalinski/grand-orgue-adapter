@@ -1,9 +1,10 @@
 
 
 import Piston from '../pages/Home';
-import * as Axios from 'axios';
 import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
 
+
+//add network discovery
 export const organServiceURL = 'http://192.168.100.2:3000'
 
 export class OrganService {

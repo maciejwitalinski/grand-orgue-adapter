@@ -63,19 +63,15 @@ const init = (config, output) => {
         return res.json({status: 'ok', data: grandOrgue.reset(req, res) });
     });
     
-    app.patch('/api/piston', (req, res) => {
-        return res.json({
-            status: 'ok',
-            data: grandOrgue.switch(req)
-        });
-    });
+    app.patch('/api/piston', (req, res) => res.json({
+        status: 'ok',
+        data: grandOrgue.switch(req)
+    }));
 
-    app.patch('/api/pistons', (req, res) => {
-        return res.json({
-            status: 'ok',
-            data: grandOrgue.switchAll(req)
-        });
-    });
+    app.patch('/api/pistons', (req, res) => res.json({
+        status: 'ok',
+        data: grandOrgue.switchAll(req)
+    }));
 
     app.listen(port, () => console.log(`GOadapter is listening on port ${port}!`));
 }

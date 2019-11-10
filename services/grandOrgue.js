@@ -20,11 +20,13 @@ class GrandOrgue {
     }
 
     switch(req) {
-        return this.midi.send('noteon', {
+        this.midi.send('noteon', {
             note: req.body.key,
             velocity: req.body.on ? 100 : 0,
             channel: this.channel
         });
+
+        return 'Piston set';
     }
 
     switchAll(req) {
@@ -35,6 +37,7 @@ class GrandOrgue {
                 channel: this.channel
             });
         }
+        return 'Pistons set';
     }
 }
 
