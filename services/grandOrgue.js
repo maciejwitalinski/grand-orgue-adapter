@@ -19,7 +19,7 @@ class GrandOrgue {
         }
     }
 
-    switch(req) {
+    switchPiston(req) {
         this.midi.send('noteon', {
             note: req.body.key,
             velocity: req.body.on ? 100 : 0,
@@ -29,7 +29,7 @@ class GrandOrgue {
         return 'Piston set';
     }
 
-    switchAll(req) {
+    switchPistons(req) {
         for(let piston of req.body.pistons) {
             this.midi.send('noteon', {
                 note: piston.key,

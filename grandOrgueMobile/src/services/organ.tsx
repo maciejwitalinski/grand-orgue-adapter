@@ -1,7 +1,6 @@
 
-
-import Piston from '../pages/Home';
 import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
+import { Piston } from '../interfaces/piston';
 
 
 //add network discovery

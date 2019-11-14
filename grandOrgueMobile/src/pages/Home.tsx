@@ -3,18 +3,8 @@ import * as config from '../organ.json';
 import React, { Component } from 'react';
 import './Home.css'; 
 import { OrganService } from '../services/organ';
-
-export interface Organ {
-  name: string 
-  start: number
-  pistons: Array<Piston>
-}
-
-export interface Piston {
-  name: string
-  key: number
-  on?: boolean
-}
+import { Piston } from '../interfaces/piston.js';
+import { Organ } from '../interfaces/organ.js';
 
 class HomePage extends Component<{}, { selectedOrgan: Organ, selectedSet: number, setConfig: Array<any> }> {
   private organService: OrganService = new OrganService();
@@ -30,15 +20,16 @@ class HomePage extends Component<{}, { selectedOrgan: Organ, selectedSet: number
     this.loadSet(1);
   }
 
-  public toggle(selectedOrgan: Organ, piston: any) {
+  public toggle(selectedOrgan: Organ, piston: Piston): Organ {
     piston.on = !piston.on;
 
     this.organService.setPiston(piston);
     this.saveSet(this.state.selectedSet, this.state.setConfig);
-    this.setState({...this.state, selectedOrgan: selectedOrgan})
+    this.setState({...this.state, selectedOrgan: selectedOrgan});
+    return selectedOrgan;
   }
 
-  private getSelectedOrgan() {
+  private getSelectedOrgan(): Organ {
     let stored = localStorage.getItem('selectedOrgan');
     let selectedOrgan: Organ = config[0];
     if(stored !== null) {
@@ -47,7 +38,7 @@ class HomePage extends Component<{}, { selectedOrgan: Organ, selectedSet: number
     return selectedOrgan;
   }
 
-  private loadSet(i: number) {
+  private loadSet(i: number): Array<Piston> {
     let stored = localStorage.getItem(`set_${i}`);
     let set = [];
 
