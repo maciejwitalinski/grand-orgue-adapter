@@ -20,6 +20,7 @@ class GrandOrgue {
     }
 
     switchPiston(req) {
+        console.log(req);
         this.midi.send('noteon', {
             note: req.body.key,
             velocity: req.body.on ? 100 : 0,

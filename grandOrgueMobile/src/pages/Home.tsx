@@ -18,6 +18,16 @@ class HomePage extends Component<{}, { selectedOrgan: Organ, selectedSet: number
 
   componentDidMount() {
     this.loadSet(1);
+
+    let ip = this.organService.getServiceIp();
+    if(ip === null) {
+      this.askForIp();
+    }
+  }
+
+  public askForIp() {
+    let ip = prompt("What is your backend ip address?");
+    this.organService.setServiceIp(ip);
   }
 
   public toggle(selectedOrgan: Organ, piston: Piston): Organ {
@@ -62,6 +72,7 @@ class HomePage extends Component<{}, { selectedOrgan: Organ, selectedSet: number
     return (    
       <div>
         <div className="background"></div>
+        <button className="ipAddrBtn" onClick={this.askForIp.bind(this)}>Set IP Addr</button>
         <div className="sets">
           <ul>
             {

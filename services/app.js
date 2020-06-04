@@ -59,6 +59,13 @@ prompt.get(prompt_attributes, function (err, result) {
 const init = (config, output) => {
     const grandOrgue = new GrandOrgue(app, config, output);
 
+    app.get('/', (req, res) => {
+        return res.json({
+            app: 'GrandOrgue-adapter',
+            version: 0.1
+        })
+    })
+
     app.patch('/api/reset', (req, res) => {
         return res.json({status: 'ok', data: grandOrgue.reset(req, res) });
     });
